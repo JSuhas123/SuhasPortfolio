@@ -5,7 +5,6 @@ import { SectionHeader } from "@/features/home/SectionHeader";
 import type { LucideIcon } from "lucide-react";
 import { BookOpen, BrainCircuit, Eye, Layers, Users, Zap } from "lucide-react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- LucideIcon record indexed by string key
 const ICON_MAP: Record<string, LucideIcon> = {
   Users,
   Zap,
