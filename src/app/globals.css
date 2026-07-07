@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CLASS-BASED DARK MODE
+   next-themes sets class="dark" on <html>; this wires Tailwind's dark:
+   variant to that selector instead of the default media query.
+   ───────────────────────────────────────────────────────────────────────── */
+@variant dark (&:is(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — LIGHT MODE
+   All raw semantic tokens are plain CSS custom properties so they can be
+   read at runtime (e.g. by JS-based charts, canvas, or Three.js scenes).
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+  /* --- Backgrounds --- */
+  --background: oklch(99% 0.002 264);
+  --background-subtle: oklch(97% 0.003 264);
+  --surface: oklch(100% 0 0);
+  --surface-raised: oklch(96% 0.004 264);
+
+  /* --- Text hierarchy --- */
+  --foreground: oklch(10% 0.01 264);
+  --muted: oklch(45% 0.02 264);
+  --subtle: oklch(62% 0.015 264);
+
+  /* --- Borders --- */
+  --border: oklch(88% 0.008 264);
+  --border-subtle: oklch(93% 0.005 264);
+
+  /* --- Accent (interactive / brand) --- */
+  --accent: oklch(55% 0.2 264);
+  --accent-foreground: oklch(99% 0 0);
+
+  /* --- Layout --- */
+  --container-max: 72rem; /* 1152px */
+  --container-max-prose: 68ch;
+  --container-pad: 1.5rem;
+
+  /* --- Border radius scale --- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* --- Motion tokens --- */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-linear: linear;
+
+  /* --- Z-index scale --- */
+  --z-hide: -1;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 600;
+  --z-tooltip: 700;
+
+  /* --- Shadow scale --- */
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.08), 0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-md: 0 4px 12px oklch(0% 0 0 / 0.08), 0 2px 4px oklch(0% 0 0 / 0.04);
+  --shadow-lg: 0 10px 24px oklch(0% 0 0 / 0.1), 0 4px 8px oklch(0% 0 0 / 0.04);
+  --shadow-xl:
+    0 20px 40px oklch(0% 0 0 / 0.12), 0 8px 16px oklch(0% 0 0 / 0.06);
+
+  /* --- Responsive container padding --- */
+  --container-pad: 1rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS — DARK MODE
+   Only override tokens that differ. Anything not listed here inherits
+   from :root, ensuring accidental omissions fail obviously.
+   ───────────────────────────────────────────────────────────────────────── */
+.dark {
+  --background: oklch(10% 0.008 264);
+  --background-subtle: oklch(13% 0.008 264);
+  --surface: oklch(12% 0.008 264);
+  --surface-raised: oklch(16% 0.01 264);
+  --foreground: oklch(97% 0.003 264);
+  --muted: oklch(68% 0.012 264);
+  --subtle: oklch(52% 0.015 264);
+  --border: oklch(22% 0.012 264);
+  --border-subtle: oklch(17% 0.01 264);
+  --accent: oklch(72% 0.18 264);
+  --accent-foreground: oklch(10% 0.008 264);
+
+  /* Shadows are more prominent on dark backgrounds */
+  --shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.25);
+  --shadow-sm: 0 1px 3px oklch(0% 0 0 / 0.35), 0 1px 2px oklch(0% 0 0 / 0.2);
+  --shadow-md: 0 4px 12px oklch(0% 0 0 / 0.4), 0 2px 4px oklch(0% 0 0 / 0.25);
+  --shadow-lg: 0 10px 24px oklch(0% 0 0 / 0.45), 0 4px 8px oklch(0% 0 0 / 0.3);
+  --shadow-xl: 0 20px 40px oklch(0% 0 0 / 0.5), 0 8px 16px oklch(0% 0 0 / 0.35);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TAILWIND THEME BRIDGE
+   Maps semantic tokens into Tailwind's utility namespace.
+   bg-background, text-foreground, border-border, etc. are now available.
+   ───────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GLOBAL BASE STYLES
+   ───────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Responsive container padding via CSS media queries */
+@media (min-width: 640px) {
+  :root {
+    --container-pad: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-pad: 2rem;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, ui-sans-serif, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   FOCUS RING
+   Replaces the browser default with a consistent, branded ring.
+   Applied globally so every interactive element gets it for free.
+   ───────────────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SELECTION
+   ───────────────────────────────────────────────────────────────────────── */
+::selection {
+  background-color: color-mix(in oklch, var(--accent) 20%, transparent);
+  color: var(--foreground);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SCROLLBAR  (Webkit + Firefox)
+   Minimal, unobtrusive. Inherits from border tokens so it auto-adapts.
+   ───────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted);
+}
+
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CODE BLOCKS
+   Baseline styles for MDX prose content.
+   ───────────────────────────────────────────────────────────────────────── */
+pre {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-raised);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  border: 1px solid var(--border);
+}
+
+code {
+  font-family: var(--font-geist-mono, ui-monospace, monospace);
+  font-size: 0.875em;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* ─── Knowledge Hub — subtle animated grid background ─── */
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 60px 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-grid-drift {
+    animation: none !important;
+  }
+}
