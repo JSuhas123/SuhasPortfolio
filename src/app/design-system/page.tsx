@@ -149,7 +149,7 @@ export default function DesignSystemPage() {
             <Divider />
             <div className="space-y-1">
               <Caption>H1 — text-3xl / lg:text-4xl</Caption>
-              <H1>Staff Frontend Engineer</H1>
+              <H1>AI Systems Engineer</H1>
             </div>
             <Divider />
             <div className="space-y-1">
@@ -371,7 +371,7 @@ export default function DesignSystemPage() {
               <Caption className="mb-3 block">Timeline Card</Caption>
               <div className="border-border max-w-lg space-y-8 border-l pl-6">
                 <TimelineCard
-                  title="Staff Frontend Engineer"
+                  title="AI Systems Engineer"
                   company="Acme Corp"
                   period="2023 — Present"
                   description="Led the design system initiative, improving component re-use by 60%."

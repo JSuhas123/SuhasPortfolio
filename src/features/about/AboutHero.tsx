@@ -93,7 +93,7 @@ export function AboutHero() {
               Resume
             </a>
             <a
-              href="https://github.com/jsuhas"
+              href="https://github.com/jsuhas123"
               target="_blank"
               rel="noopener noreferrer"
               className="border-border bg-surface-raised text-foreground hover:bg-surface-raised/70 focus-visible:ring-accent inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"
@@ -103,7 +103,7 @@ export function AboutHero() {
               <ExternalLink className="h-3 w-3 opacity-50" aria-hidden />
             </a>
             <a
-              href="https://linkedin.com/in/jsuhas"
+              href="https://www.linkedin.com/in/j-suhas-/"
               target="_blank"
               rel="noopener noreferrer"
               className="border-border bg-surface-raised text-foreground hover:bg-surface-raised/70 focus-visible:ring-accent inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:outline-none"

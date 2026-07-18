@@ -43,7 +43,7 @@ export function HeroText() {
         variants={FADE_UP}
         className="text-subtle font-mono text-xs tracking-[0.2em] uppercase"
       >
-        Staff Frontend Engineer
+        AI Systems Engineer
       </motion.p>
 
       {/* Name — the typographic hero */}
@@ -59,7 +59,7 @@ export function HeroText() {
         variants={FADE_UP}
         className="text-muted mt-3 text-xl font-light tracking-tight sm:text-2xl"
       >
-        Distributed Systems · Frontend · Performance
+        Distributed Systems · Full-Stack · Performance
       </motion.p>
 
       {/* Description */}

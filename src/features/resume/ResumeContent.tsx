@@ -23,16 +23,16 @@ export function ResumeContent() {
           J Suhas
         </h1>
         <p className="text-muted mt-1 text-base">
-          Staff Frontend Engineer · Full Stack · AI · Distributed Systems
+          AI Systems Engineer · Full Stack · AI · Distributed Systems
         </p>
         <div className="text-subtle mt-2 flex flex-wrap items-center gap-3 text-xs">
           <span>Bengaluru, India</span>
           <span aria-hidden>·</span>
           <a
-            href="mailto:jsuhas@example.com"
+            href="mailto:suhasjanardhan10@gmail.com"
             className="hover:text-foreground underline-offset-4 hover:underline"
           >
-            jsuhas@example.com
+            suhasjanardhan10@gmail.com
           </a>
           <span aria-hidden>·</span>
           <a

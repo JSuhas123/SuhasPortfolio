@@ -37,9 +37,9 @@ const CONTACT_METHODS: readonly ContactMethod[] = [
     title: "Email",
     description:
       "Best for project inquiries, collaboration, or anything detailed.",
-    action: "jsuhas@example.com",
-    href: "mailto:jsuhas@example.com",
-    copyValue: "jsuhas@example.com",
+    action: "suhasjanardhan10@gmail.com",
+    href: "mailto:suhasjanardhan10@gmail.com",
+    copyValue: "suhasjanardhan10@gmail.com",
   },
   {
     id: "linkedin",
@@ -47,7 +47,7 @@ const CONTACT_METHODS: readonly ContactMethod[] = [
     title: "LinkedIn",
     description: "Connect professionally. I respond to thoughtful DMs.",
     action: "Connect on LinkedIn",
-    href: "https://linkedin.com/in/jsuhas",
+    href: "https://www.linkedin.com/in/j-suhas-/",
     external: true,
   },
   {
@@ -56,7 +56,7 @@ const CONTACT_METHODS: readonly ContactMethod[] = [
     title: "GitHub",
     description: "See my code, contributions, and open-source work.",
     action: "View GitHub",
-    href: "https://github.com/jsuhas",
+    href: "https://github.com/jsuhas123",
     external: true,
   },
   {
@@ -66,7 +66,7 @@ const CONTACT_METHODS: readonly ContactMethod[] = [
     description:
       "Engineering articles on distributed systems and system design.",
     action: "Read on Medium",
-    href: "https://medium.com/@jsuhas",
+    href: "https://medium.com/@suhasjanardhan10",
     external: true,
   },
   {

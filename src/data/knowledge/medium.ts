@@ -20,7 +20,7 @@ export const MEDIUM_PROFILE: MediumProfile = {
   name: "J Suhas",
   handle: "@jsuhas",
   bio: "Writing about distributed systems, system design, and building software that holds up under pressure.",
-  profileUrl: "https://medium.com/@jsuhas",
+  profileUrl: "https://medium.com/@suhasjanardhan10",
   articles: [
     {
       title: "Rate Limiting at Scale: Token Bucket vs. Sliding Window Counter",
@@ -30,7 +30,7 @@ export const MEDIUM_PROFILE: MediumProfile = {
       date: "Jun 2026",
       claps: 312,
       tags: ["system-design", "api-design", "backend"],
-      url: "https://medium.com/@jsuhas",
+      url: "https://medium.com/@suhasjanardhan10",
     },
     {
       title: "Consistent Hashing Without the Hand-Waving",
@@ -40,7 +40,7 @@ export const MEDIUM_PROFILE: MediumProfile = {
       date: "May 2026",
       claps: 487,
       tags: ["distributed-systems", "databases", "algorithms"],
-      url: "https://medium.com/@jsuhas",
+      url: "https://medium.com/@suhasjanardhan10",
     },
     {
       title: "What Nobody Tells You About Kafka Consumer Groups",
@@ -50,7 +50,7 @@ export const MEDIUM_PROFILE: MediumProfile = {
       date: "Apr 2026",
       claps: 256,
       tags: ["kafka", "distributed-systems", "event-streaming"],
-      url: "https://medium.com/@jsuhas",
+      url: "https://medium.com/@suhasjanardhan10",
     },
   ],
 };
